@@ -33,11 +33,12 @@ export default function LovePage() {
   }, []);
 
   return (
-    <div className="h-full bg-[#212121] text-[#ff4f81] flex flex-col items-center justify-center p-6">
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">
+    // add a bg gradient from #212121 to #181818 from top to bottom
+    <div className="h-full  text-[#ff4f81] flex flex-col items-center justify-center p-6 inconsolata-amanda bg-gradient-to-b from-[#212121] via-[#212121]  to-[#181818]">
+      <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 inconsolata-amanda">
         Gu e Amanda ♥️
       </h1>
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">
+      <h1 className="text-3xl md:text-5xl font-bold text-center mb-5 inconsolata-amanda">
         Nós estamos juntos há:
       </h1>
       <div className="flex space-x-2 text-center">
@@ -140,7 +141,7 @@ export default function LovePage() {
           muito feliz em estar ao seu lado e quero que esse número aumente cada
           vez mais.
         </p>
-        <p className="mt-10">Com carinho, Gu ♥️</p>
+        <p className="mt-10">Com carinho, Gu ❤️</p>
       </div>
     </div>
   );
