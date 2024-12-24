@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import "tailwindcss/tailwind.css";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import FlipNumbers from "react-flip-numbers";
+import Loading from "./components/Loading";
+
+const Carousel = lazy(() =>
+  import("react-responsive-carousel").then((mod) => ({ default: mod.Carousel }))
+);
 
 const calculateTimeTogether = () => {
   const startTime = new Date("2024-08-20T20:40:00-03:00").getTime();
@@ -89,44 +93,52 @@ export default function LovePage() {
         </div>
       </div>
       <div className="w-full max-w-xl mt-12">
-        <Carousel autoPlay infiniteLoop showStatus={false} swipeable>
-          <div>
-            <Image
-              src="/image3.jpeg"
-              alt="Foto 2"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
-          </div>
-          <div>
-            <Image
-              src="/image2.jpeg"
-              alt="Foto 2"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
-          </div>
-          <div>
-            <Image
-              src="/image4.jpeg"
-              alt="Foto 2"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
-          </div>
-          <div>
-            <Image
-              src="/image1.jpeg"
-              alt="Foto 1"
-              width={500}
-              height={500}
-              className="rounded-lg"
-            />
-          </div>
-        </Carousel>
+        <Suspense
+          fallback={
+            <div className="h-[500px] flex justify-center items-center">
+              <Loading />
+            </div>
+          }
+        >
+          <Carousel autoPlay infiniteLoop showStatus={false} swipeable>
+            <div>
+              <Image
+                src="/image3.jpeg"
+                alt="Foto 2"
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              <Image
+                src="/image2.jpeg"
+                alt="Foto 2"
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              <Image
+                src="/image4.jpeg"
+                alt="Foto 2"
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              <Image
+                src="/image1.jpeg"
+                alt="Foto 1"
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
+            </div>
+          </Carousel>
+        </Suspense>
       </div>
       <div className="max-w-3xl text-center text-white">
         <p>
