@@ -129,10 +129,18 @@ export default function LovePage() {
       </div>
       <div className="max-w-3xl text-center text-white">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
-          dictum elit. Vivamus sit amet nulla nec justo gravida tempor.
-          Suspendisse potenti.
+          Criei esta calculadora de tempo para marcar desde quando nos
+          conhecemos, do no nosso primeiro encontro (20/11 às 20:40 - Cidade
+          Jardim) até o momento.
         </p>
+        <p className="mt-2">
+          Adicionei alguns momentos especiais que vivemos nesses{" "}
+          <u className="font-bold">{timeTogether.days} dias</u> para
+          relembrarmos juntos e dizer que você é muito importante para mim. Fico
+          muito feliz em estar ao seu lado e quero que esse número aumente cada
+          vez mais.
+        </p>
+        <p className="mt-10">Com carinho, Gu ♥️</p>
       </div>
     </div>
   );
