@@ -37,7 +37,6 @@ export default function LovePage() {
   }, []);
 
   return (
-    // add a bg gradient from #212121 to #181818 from top to bottom
     <div className="h-full  text-[#ff4f81] flex flex-col items-center justify-center p-6 inconsolata-amanda bg-gradient-to-b from-[#212121] via-[#212121]  to-[#181818]">
       <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 inconsolata-amanda">
         Gu e Amanda ♥️
